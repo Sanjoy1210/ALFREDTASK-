@@ -15,11 +15,12 @@ const EditPlace = () => {
 
   return (
     <div className="edit-place">
-      <form onSubmit={updatePlace}>
-        <input placeholder="enter city name" name="city" />
-        <input type="submit" value="Update" />
-      </form>
-
+      <div className="md:container mx-auto mt-8">
+        <form onSubmit={updatePlace}>
+          <input className="p-2 border" placeholder="enter city name" name="city" />
+          <input className="border text-white p-2 bg-pink-500" type="submit" value="Update" />
+        </form>
+      </div>
     </div>
   );
 };
