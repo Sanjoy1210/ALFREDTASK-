@@ -4,7 +4,6 @@ import Place from '../Place/Place';
 
 const AllPlace = () => {
   const { allPlaces } = useAuth();
-  console.log(allPlaces);
   return (
     <div className="all-places">
       <div className="md:container mx-auto">
