@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+import Dashboard from './Components/Dashboard/Dashboard';
+import AllPlace from './Components/AllPlace/AllPlace';
+import SearchPlace from './Components/SearchPlace/SearchPlace';
+import EditPlace from './Components/EditPlace/EditPlace';
+import AuthProvider from './Context/AuthProvider';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/allplace" element={<AllPlace />} />
+            <Route path="/searchplace" element={<SearchPlace />} />
+            <Route path="/editplace/:index" element={<EditPlace />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
